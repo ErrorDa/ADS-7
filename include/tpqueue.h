@@ -23,9 +23,10 @@ class TPQueue {
     tmp->prev = nullptr;
     return tmp;
   }
+  
  public:
   TPQueue() :head(nullptr), tail(nullptr), curr(nullptr) {}
-  ~TPQueue(){}
+  ~TPQueue() {}
   void push(const T& value) {
     if (tail && head) {
       ITEM* tmp = head;
@@ -36,7 +37,7 @@ class TPQueue {
         head = tmp;
       } else {
         while (tmp->next) {
-          if (tmp->next->value.prior < value.prior){
+          if (tmp->next->value.prior < value.prior) {
             ITEM * temp = create(value);
             temp->next = tmp->next;
             tmp->prev = temp->prev;
